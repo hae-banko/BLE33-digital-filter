@@ -52,13 +52,13 @@ fp = open((DATA_LOG_PATH), 'rt')
 with fp as SENSOR_LOG:
     for raw_line in SENSOR_LOG:
         raw_line = raw_line.rstrip('\n')
-        if raw_line == ['']: # Skips empty lines
+        if raw_line == ['']: # Leere Zeile ignorieren 
             continue
         splitted_variables = raw_line.split(" ")
         for i in range(9): # 9-Achsen
             data_list[i].append(float(splitted_variables[i][4:]))
 
-# Output test
+# Debug 1
 """
 i = 0
 for each in data_list:
@@ -73,6 +73,7 @@ for each in data_list:
 """TODO"""
 # Renew main.ino so that it will conform to the format that has been set in sensor data log
 # FFT
-# Export as image 
+# Export as images? Alternative is just to display all at once.
+
 
 
