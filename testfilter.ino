@@ -161,7 +161,7 @@ void smCalibrateGyro(){
 	// -----------------------------------------------
 	//                     N
 	//
-	mean_bias_x = mean_bias_x + (bias_x / N);
+	mean_bias_x = mean_bias_x + (bias_x / N); // noch nicht korrigiert
 	mean_bias_y = mean_bias_y + (bias_y / N);
 	mean_bias_z = mean_bias_z + (bias_z / N);
 
