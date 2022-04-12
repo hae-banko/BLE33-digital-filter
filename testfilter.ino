@@ -65,9 +65,19 @@ void smGetDataAG()
 	// Accelerometer
 	roll_a  = atan2f( sqrt((calData.A.x * calData.A.x) + (calData.A.z * calData.A.z)), calData.A.y) * angles_divided_by_pi;
 	pitch_a = atan2f( sqrt((calData.A.y * calData.A.y) + (calData.A.z * calData.A.z)), calData.A.x) * angles_divided_by_pi;
-
+	
+	// Complementary Filter
+	roll_g  = (0.98) * (roll_g)   + (0.02 * roll_a);
+	pitch_g = (0.98) * (pitch_g)  + (0.02 * pitch_a);
+	
+	/*
 	roll_g  = (0.02) * (roll_g)   + (0.98 * roll_a);
 	pitch_g = (0.02) * (pitch_g)  + (0.98 * pitch_a);
+	
+	Schneller als wenn man (0.98) * (roll_g) benutzt
+	Messergebnisse sind aber nicht so stabil wie die
+	Andere. 
+	*/
 
 	Serial.print("Roll: ");
 	Serial.print(roll_g);
