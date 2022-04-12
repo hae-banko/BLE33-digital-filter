@@ -86,7 +86,16 @@ void smGetDataAG()
 	Serial.println(pitch_g); // Automatisch '\n' am Ende hinzufuegen
 }
 
-
+/*
+Grobe und manuelle Approximation für die Kalibrierung von dem Drift des Gyroskopes.
+- Board auf dem Boden einfach legen, soll "0" Grad sein
+- Messwerterfassung beginnt
+- Serial Monitor beobachten und gucken welchen Wert bei "0" Grad auftritt, diese
+  Abweichung von Null soll diese Driftsbeschleunigung von dem Gyroskop. 
+- Werte manuell aufschreiben. 
+- Die aktuelle Messwerte mit approximierte Werte des Drifts subtrahieren 
+- Versuch noch mal bis aktuelle Messwerte 0 nähert. 
+*/
 void smGetGyroOnly(){
 	if (!imu.getValuesAG(&calData)){
 		return;
