@@ -116,6 +116,7 @@ float gx, gy, gz;
 float bias_x, bias_y, bias_z;
 float mean_bias_x, mean_bias_y, mean_bias_z; // Durchschnittliche Abw.
 
+// TO-DO: Berechnung der Durchschnitte mit timer Schleife
 void smCalibrateGyro(){
 	mean_bias_x, mean_bias_y, mean_bias_z = 0.0;
 
