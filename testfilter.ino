@@ -41,7 +41,7 @@ void smInit(){
 RawDataAG  rawData;
 CalValueAG calData;
 CalValue   calData2;
-float dt = 0.01;
+float dt = 0.01; // Testvariable: 0.01; Frequenz der Sensoren sind 500, d.h. dt = 0.002
 float angles_divided_by_pi = 180/M_PI; // Hilfsvariable fuer leichtere Berechnung
 
 float hf1,hf2;
@@ -55,29 +55,27 @@ void smGetDataAG()
 	if(!imu.getValuesAG(&calData)){
 		return;
 	}
-	hf1 = calData.G.x - 2.01;
-	hf2 = calData.G.y + 0.67;
+
+	hf1 = calData.G.x - 2.01; // 2.01 war manuell bestimmt
+	hf2 = calData.G.y + 0.67; // 0.67 war manuell bestimmt
 
 	// Gyroskop
 	roll_g  += (hf1 * dt);
 	pitch_g -= (hf2 * dt);
 
 	// Accelerometer
-	roll_a  = atan2f( sqrt((calData.A.x * calData.A.x) + (calData.A.z * calData.A.z)), calData.A.y) * angles_divided_by_pi;
-	pitch_a = atan2f( sqrt((calData.A.y * calData.A.y) + (calData.A.z * calData.A.z)), calData.A.x) * angles_divided_by_pi;
-	
-	// Complementary Filter
+	roll_a  = atan2f( sqrt((calData.A.x * calData.A.x) + (calData.A.z * calData.A.z)), calData.A.y) * angles_divided_by_pi; // Bereich: 180 grad
+	pitch_a = atan2f( sqrt((calData.A.y * calData.A.y) + (calData.A.z * calData.A.z)), calData.A.x) * angles_divided_by_pi; // Bereich: 180 grad
+
+	// Alternative Berechnung der Winkel mit Accelerometer 90 Grad
+	/*
+	roll  = (y,atan2(y, sqrt((calData.A.x * calData.A.x) + (calData.A.z * calData.A.z))) * 180/M_PI;
+  	pitch = (x,atan2(x, sqrt((y * y) + (z * z)))) * 180/M_PI;
+    yaw   = (atan2(-y2, x2)) * 180/PI;
+	*/
+
 	roll_g  = (0.98) * (roll_g)   + (0.02 * roll_a);
 	pitch_g = (0.98) * (pitch_g)  + (0.02 * pitch_a);
-	
-	/*
-	roll_g  = (0.02) * (roll_g)   + (0.98 * roll_a);
-	pitch_g = (0.02) * (pitch_g)  + (0.98 * pitch_a);
-	
-	Schneller als wenn man (0.98) * (roll_g) benutzt
-	Messergebnisse sind aber nicht so stabil wie die
-	Andere. 
-	*/
 
 	Serial.print("Roll: ");
 	Serial.print(roll_g);
@@ -86,16 +84,7 @@ void smGetDataAG()
 	Serial.println(pitch_g); // Automatisch '\n' am Ende hinzufuegen
 }
 
-/*
-Grobe und manuelle Approximation für die Kalibrierung von dem Drift des Gyroskopes.
-- Board auf dem Boden einfach legen, soll "0" Grad sein
-- Messwerterfassung beginnt
-- Serial Monitor beobachten und gucken welchen Wert bei "0" Grad auftritt, diese
-  Abweichung von Null soll diese Driftsbeschleunigung von dem Gyroskop. 
-- Werte manuell aufschreiben. 
-- Die aktuelle Messwerte mit approximierte Werte des Drifts subtrahieren 
-- Versuch noch mal bis aktuelle Messwerte 0 nähert. 
-*/
+
 void smGetGyroOnly(){
 	if (!imu.getValuesAG(&calData)){
 		return;
@@ -108,7 +97,7 @@ void smGetGyroOnly(){
 	Serial.print(roll_g - 2.2 -0.12 +0.31);
 	Serial.print("\t");
 	Serial.print("y: ");
-	Serial.print(pitch_g + 0.67); // Automatisch '\n' am Ende hinzufuegen
+	Serial.print(pitch_g + 0.67);
 	Serial.print("\t");
 	Serial.print("z: ");
 	Serial.println(calData.G.z + 0.06);
@@ -135,7 +124,8 @@ float gx, gy, gz;
 float bias_x, bias_y, bias_z;
 float mean_bias_x, mean_bias_y, mean_bias_z; // Durchschnittliche Abw.
 
-// TO-DO: Berechnung der Durchschnitte mit timer Schleife
+
+// Noch nicht fertig
 void smCalibrateGyro(){
 	mean_bias_x, mean_bias_y, mean_bias_z = 0.0;
 
@@ -161,7 +151,7 @@ void smCalibrateGyro(){
 	// -----------------------------------------------
 	//                     N
 	//
-	mean_bias_x = mean_bias_x + (bias_x / N); // noch nicht korrigiert
+	mean_bias_x = mean_bias_x + (bias_x / N);
 	mean_bias_y = mean_bias_y + (bias_y / N);
 	mean_bias_z = mean_bias_z + (bias_z / N);
 
