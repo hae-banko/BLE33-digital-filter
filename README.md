@@ -1,3 +1,33 @@
+# TODO
+
+- [ ] Inhaltsverzeichnis
+- [ ] Abbildungsverzeichnis
+- [ ] Tabellenverzeichnis
+- [ ] Begriffserklärung (Habe schon hier ein bisschen gemacht)
+  - [X] Mikrocontroller
+  - [X] Digitalsensoren
+  - [X] Digitale Signalverarbeitung
+  - [X] Digitales Signal
+  - [X] Digitales FIlter
+  - [X] Complementary Filter
+  - [X] Hochpass
+  - [X] Gyroskop
+  - [X] Tiefpass
+  - [X] Accelerometer
+  - [ ] Zustandsmaschine
+- [ ] Einleitung
+- [ ] Tabelle: benutzte Kennzeichen
+- [ ] Winkelberechnung für Gyroskop (Formel ist schon oben gegeben)
+- [ ] Winkelberechnung für Accelerometer (Formel und Methode schon in dem Link gegeben)
+- [x] Filterherleitung
+  - [X] Filter Blockschaltbild 
+- [ ] Zustandsmaschine? 
+  - [ ] Zustandsdiagramm? 
+- [ ] Bilder, um die benutzte Orientation zu erklären (Kann mit Fotos oder direkt aus dem Datenblatt auszunehmen)
+- [ ] Versuche/Ergebnisse?
+- [ ] Zusammenfassung
+- [ ] Referenzen
+- [ ] Anhang
 
 # Begriffserklärung
 
@@ -89,34 +119,3 @@ Die Herletiung mit Trigonometrie liegt hier: https://www.analog.com/en/app-notes
 ### Complementary-Filter
 Ist schon in einem Dokument geschrieben.
 
----
-# Was noch nicht geschrieben werden? 
-
-- [ ] Inhaltsverzeichnis
-- [ ] Abbildungsverzeichnis
-- [ ] Tabellenverzeichnis
-- [ ] Begriffserklärung (Habe schon hier ein bisschen gemacht)
-  - [X] Mikrocontroller
-  - [X] Digitalsensoren
-  - [X] Digitale Signalverarbeitung
-  - [X] Digitales Signal
-  - [X] Digitales FIlter
-  - [X] Complementary Filter
-  - [X] Hochpass
-  - [X] Gyroskop
-  - [X] Tiefpass
-  - [X] Accelerometer
-  - [ ] Zustandsmaschine
-- [ ] Einleitung
-- [ ] Tabelle: benutzte Kennzeichen
-- [ ] Winkelberechnung für Gyroskop (Formel ist schon oben gegeben)
-- [ ] Winkelberechnung für Accelerometer (Formel und Methode schon in dem Link gegeben)
-- [x] Filterherleitung
-  - [X] Filter Blockschaltbild 
-- [ ] Zustandsmaschine? 
-  - [ ] Zustandsdiagramm? 
-- [ ] Bilder, um die benutzte Orientation zu erklären (Kann mit Fotos oder direkt aus dem Datenblatt auszunehmen)
-- [ ] Versuche/Ergebnisse?
-- [ ] Zusammenfassung
-- [ ] Referenzen
-- [ ] Anhang
