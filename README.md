@@ -74,6 +74,10 @@ Rauschen ist im Allgemein eien Störung in dem Signal mit unspezifizertem Freque
 [noch nicht]
 
 ---
+# Bilder
+![](https://github.com/laode-haeba/-SemPrj-BLE33_Sense_DigitalFilter/blob/main/Filter_Blockschaltbild.jpg?raw=true)
+
+---
 # Herleitung
 
 ### Winkelberechnung für Gyroskop
