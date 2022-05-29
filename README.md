@@ -108,6 +108,7 @@ Ist schon in einem Dokument geschrieben.
 - [ ] Winkelberechnung für Gyroskop (Formel ist schon oben gegeben)
 - [ ] Winkelberechnung für Accelerometer (Formel und Methode schon in dem Link gegeben)
 - [x] Filterherleitung
+  - [X] Filter Blockschaltbild 
 - [ ] Bilder, um die benutzte Orientation zu erklären (Kann mit Fotos oder direkt aus dem Datenblatt auszunehmen)
 - [ ] Versuche/Ergebnisse?
 - [ ] Zusammenfassung
