@@ -109,6 +109,8 @@ Ist schon in einem Dokument geschrieben.
 - [ ] Winkelberechnung für Accelerometer (Formel und Methode schon in dem Link gegeben)
 - [x] Filterherleitung
   - [X] Filter Blockschaltbild 
+- [ ] Zustandsmaschine? 
+  - [ ] Zustandsdiagramm? 
 - [ ] Bilder, um die benutzte Orientation zu erklären (Kann mit Fotos oder direkt aus dem Datenblatt auszunehmen)
 - [ ] Versuche/Ergebnisse?
 - [ ] Zusammenfassung
