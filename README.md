@@ -71,6 +71,8 @@ Rauschen ist im Allgemein eien Störung in dem Signal mit unspezifizertem Freque
 --- 
 **Zustandsmaschine**
 
+[noch nicht]
+
 ---
 # Herleitung
 
@@ -86,15 +88,28 @@ Ist schon in einem Dokument geschrieben.
 ---
 # Was noch nicht geschrieben werden? 
 
--[ ] Inhaltsverzeichnis
--[ ] Abbildungsverzeichnis
--[ ] Tabellenverzeichnis
--[ ] Begriffserklärung
--[ ] Einleitung
--[ ] Tabelle: benutzte Kennzeichen
--[ ] Winkelberechnung für Gyroskop (Formel ist schon oben gegeben)
--[ ] Winkelberechnung für Accelerometer (Formel und Methode schon in dem Link gegeben)
--[x] Filterherleitung
--[ ] Bilder, um die benutzte Orientation zu erklären (Kann mit Fotos oder direkt aus dem Datenblatt auszunehmen)
--[ ] Versuche/Ergebnisse?
--[ ] Zusammenfassung
+- [ ] Inhaltsverzeichnis
+- [ ] Abbildungsverzeichnis
+- [ ] Tabellenverzeichnis
+- [ ] Begriffserklärung (Habe schon hier ein bisschen gemacht)
+  - [X] Mikrocontroller
+  - [X] Digitalsensoren
+  - [X] Digitale Signalverarbeitung
+  - [X] Digitales Signal
+  - [X] Digitales FIlter
+  - [X] Complementary Filter
+  - [X] Hochpass
+  - [X] Gyroskop
+  - [X] Tiefpass
+  - [X] Accelerometer
+  - [ ] Zustandsmaschine
+- [ ] Einleitung
+- [ ] Tabelle: benutzte Kennzeichen
+- [ ] Winkelberechnung für Gyroskop (Formel ist schon oben gegeben)
+- [ ] Winkelberechnung für Accelerometer (Formel und Methode schon in dem Link gegeben)
+- [x] Filterherleitung
+- [ ] Bilder, um die benutzte Orientation zu erklären (Kann mit Fotos oder direkt aus dem Datenblatt auszunehmen)
+- [ ] Versuche/Ergebnisse?
+- [ ] Zusammenfassung
+- [ ] Referenzen
+- [ ] Anhang
