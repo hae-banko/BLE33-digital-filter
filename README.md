@@ -80,7 +80,21 @@ Formel ist hier gegeben: https://electronics.stackexchange.com/questions/83464/m
 ### Winkelberechnung für Accelerometer
 Die Herletiung mit Trigonometrie liegt hier: https://www.analog.com/en/app-notes/an-1057.html
 
-### Complementary-Fitler
+### Complementary-Filter
 Ist schon in einem Dokument geschrieben.
 
 ---
+# Was noch nicht geschrieben werden? 
+
+-[ ] Inhaltsverzeichnis
+-[ ] Abbildungsverzeichnis
+-[ ] Tabellenverzeichnis
+-[ ] Begriffserklärung
+-[ ] Einleitung
+-[ ] Tabelle: benutzte Kennzeichen
+-[ ] Winkelberechnung für Gyroskop (Formel ist schon oben gegeben)
+-[ ] Winkelberechnung für Accelerometer (Formel und Methode schon in dem Link gegeben)
+-[x] Filterherleitung
+-[ ] Bilder, um die benutzte Orientation zu erklären (Kann mit Fotos oder direkt aus dem Datenblatt auszunehmen)
+-[ ] Versuche/Ergebnisse?
+-[ ] Zusammenfassung
