@@ -4,7 +4,7 @@
 #include "testfilter.h"
 #include "nRF52840Twi.h"
 #include "SensorLSM9DS1.h"
-#include "math.h"				// Atan2() Funktion
+#include "math.h"	// Atan2() Funktion
 
 float roll, yaw, pitch;
 float roll_a, yaw_a, pitch_a;
