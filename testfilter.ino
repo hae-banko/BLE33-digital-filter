@@ -41,7 +41,7 @@ void smInit(){
 RawDataAG  rawData;
 CalValueAG calData;
 CalValue   calData2;
-float dt = 0.01; // Testvariable: 0.01; Frequenz der Sensoren sind 500, d.h. dt = 0.002
+float dt = 0.01; // dt: 0.01; Frequenz der Sensoren sind 500, d.h. dt = 0.002
 float angles_divided_by_pi = 180/M_PI; // Hilfsvariable fuer leichtere Berechnung
 
 float hf1,hf2;
@@ -55,21 +55,24 @@ void smGetDataAG()
 	if(!imu.getValuesAG(&calData)){
 		return;
 	}
-
+	
+	// Drift-Korrektur von Gyroskop
 	hf1 = calData.G.x - 2.01; // 2.01 war manuell bestimmt
 	hf2 = calData.G.y + 0.67; // 0.67 war manuell bestimmt
 
-	// Gyroskop
+	// Integrierer
 	roll_g  += (hf1 * dt);
 	pitch_g -= (hf2 * dt);
 
-	// Accelerometer
+	// Winkelberechnung aus Accelerometer
 	roll_a  = atan2f( sqrt((calData.A.x * calData.A.x) + (calData.A.z * calData.A.z)), calData.A.y) * angles_divided_by_pi; // Bereich: 180 grad
 	pitch_a = atan2f( sqrt((calData.A.y * calData.A.y) + (calData.A.z * calData.A.z)), calData.A.x) * angles_divided_by_pi; // Bereich: 180 grad
-
+	
+	// Complementary Filter
 	roll_g  = (0.98) * (roll_g)   + (0.02 * roll_a);
 	pitch_g = (0.98) * (pitch_g)  + (0.02 * pitch_a);
-
+	
+	// Konsoleausgabe
 	Serial.print("Roll: ");
 	Serial.print(roll_g);
 	Serial.print("\t");
@@ -114,7 +117,7 @@ void setup()
 	imu.syncValuesAG();
 }
 
-// The loop function is called in an endless loop
+// Schleife
 void loop()
 {
 	lc.begin();
