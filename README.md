@@ -1,4 +1,4 @@
-# Arduino BLE33 Gyro & Accelerometer Complementary Digital Filter
+# Arduino BLE33 Gyro & Accelerometer Complementary Filter
 
 A simple complementary filter for stable angular measurement using only the gyroscope and accelerometer on the BLE-33 board. 
 
